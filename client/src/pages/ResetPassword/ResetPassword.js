@@ -11,7 +11,7 @@ export default function ResetPassword(props) {
   const history = useHistory();
 
   function handlePasswordReset() {
-    fetch("http://localhost:9090/api/users/passwordreset", {
+    fetch(`http://${window.location.hostname}/api/users/passwordreset`, {
       method: "POST",
       credentials: "include",
       headers: {

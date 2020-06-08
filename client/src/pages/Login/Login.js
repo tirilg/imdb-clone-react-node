@@ -10,7 +10,7 @@ export default function Login({ setIsAuthenticated }) {
   const history = useHistory();
 
   function login() {
-    fetch("http://localhost:9090/api/users/login", {
+    fetch(`http://${window.location.hostname}/api/users/login`, {
       method: "POST",
       credentials: "include",
       headers: {

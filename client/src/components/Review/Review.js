@@ -7,7 +7,7 @@ export default function Review({ isAuthenticated, movie }) {
   const [reviews, setReviews] = useState([]);
 
   function getAllReviews() {
-    fetch("http://localhost:9090/api/review/" + movie.id, {
+    fetch(`http://${window.location.hostname}/api/review/` + movie.id, {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",

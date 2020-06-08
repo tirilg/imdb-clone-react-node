@@ -13,7 +13,7 @@ export default function Profile({ keys, setIsAuthenticated }) {
   const history = useHistory();
 
   function getUserInfo() {
-    fetch("http://localhost:9090/api/users", {
+    fetch(`http://${window.location.hostname}/api/users`, {
       credentials: "include",
     })
       .then((res) => res.json())
@@ -25,7 +25,7 @@ export default function Profile({ keys, setIsAuthenticated }) {
   }
 
   function deleteUser() {
-    fetch("http://localhost:9090/api/users", {
+    fetch(`http://${window.location.hostname}/api/users`, {
       method: "DELETE",
       credentials: "include",
       headers: {
@@ -43,7 +43,7 @@ export default function Profile({ keys, setIsAuthenticated }) {
   }
 
   async function getFavorites() {
-    await fetch("http://localhost:9090/api/liked/", {
+    await fetch(`http://${window.location.hostname}/api/liked/`, {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -80,7 +80,7 @@ export default function Profile({ keys, setIsAuthenticated }) {
   }
 
   async function handleRemove(id) {
-    await fetch("http://localhost:9090/api/liked/" + id, {
+    await fetch(`http://${window.location.hostname}/api/liked/` + id, {
       method: "DELETE",
       headers: {
         Accept: "application/json",

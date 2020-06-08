@@ -5,7 +5,7 @@ export default function Logout({ setIsAuthenticated }) {
   const history = useHistory();
 
   useEffect(() => {
-    fetch("http://localhost:9090/api/users/logout", {
+    fetch(`http://${window.location.hostname}/api/users/logout`, {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",

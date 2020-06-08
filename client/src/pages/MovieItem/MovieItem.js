@@ -58,7 +58,7 @@ export default function MovieItem({ isAuthenticated, keys, match, location }) {
 
   function handleIsInWatchList() {
     const movieId = match.params.id;
-    fetch("http://localhost:9090/api/watch/hasWatchLink/" + movieId, {
+    fetch(`http://${window.location.hostname}/api/watch/hasWatchLink/` + movieId, {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -83,7 +83,7 @@ export default function MovieItem({ isAuthenticated, keys, match, location }) {
 
   function handleIsInFavorites() {
     const movieId = match.params.id;
-    fetch("http://localhost:9090/api/liked/isLiked/" + movieId, {
+    fetch(`http://${window.location.hostname}/api/liked/isLiked/` + movieId, {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -108,7 +108,7 @@ export default function MovieItem({ isAuthenticated, keys, match, location }) {
 
   function addToWatchList() {
     const movieId = match.params.id;
-    fetch("http://localhost:9090/api/watch/", {
+    fetch(`http://${window.location.hostname}/api/watch/`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -133,7 +133,7 @@ export default function MovieItem({ isAuthenticated, keys, match, location }) {
 
   function addToFavorites() {
     const movieId = match.params.id;
-    fetch("http://localhost:9090/api/liked/", {
+    fetch(`http://${window.location.hostname}/api/liked/`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -158,7 +158,7 @@ export default function MovieItem({ isAuthenticated, keys, match, location }) {
 
   async function handleRemove(id, endpoint) {
  
-    await fetch("http://localhost:9090/api/" + endpoint + "/" + id, {
+    await fetch(`http://${window.location.hostname}/api/` + endpoint + "/" + id, {
       method: "DELETE",
       headers: {
         Accept: "application/json",

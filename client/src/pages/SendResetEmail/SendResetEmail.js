@@ -7,7 +7,7 @@ export default function SendResetEmail() {
     const [successMessage, setSuccessMessage] = useState("");
 
     function handleSendResetEmail() {
-        fetch('http://localhost:9090/api/users/forgotpassword', {
+        fetch(`http://${window.location.hostname}/api/users/forgotpassword`, {
             method: "POST",
             credentials: "include",
             headers: {

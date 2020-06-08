@@ -8,7 +8,7 @@ export default function Watchlist({ keys }) {
   const [isLoading, setIsLoading] = useState(true);
 
   async function getWatchlist() {
-    await fetch("http://localhost:9090/api/watch/", {
+    await fetch(`http://${window.location.hostname}/api/watch/`, {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -54,7 +54,7 @@ export default function Watchlist({ keys }) {
   }, []);
 
   async function handleRemove(id) {
-    await fetch("http://localhost:9090/api/watch/" + id, {
+    await fetch(`http://${window.location.hostname}/api/watch/` + id, {
       method: "DELETE",
       headers: {
         Accept: "application/json",

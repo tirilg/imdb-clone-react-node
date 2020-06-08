@@ -11,7 +11,7 @@ export default function ReviewForm({ movieId, reviews, setReviews }) {
   const [error, setError] = useState("");
 
   function handleUserHasReview() {
-    fetch("http://localhost:9090/api/review/hasreview/" + movieId, {
+    fetch(`http://${window.location.hostname}/api/review/hasreview/` + movieId, {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -42,7 +42,7 @@ export default function ReviewForm({ movieId, reviews, setReviews }) {
   }
 
   function handleUpdateReview() {
-    fetch("http://localhost:9090/api/review/" + reviewId, {
+    fetch(`http://${window.location.hostname}/api/review/` + reviewId, {
       method: "PATCH",
       headers: {
         Accept: "application/json",
@@ -81,7 +81,7 @@ export default function ReviewForm({ movieId, reviews, setReviews }) {
   }
 
   function handleDeleteReview() {
-    fetch("http://localhost:9090/api/review/" + reviewId, {
+    fetch(`http://${window.location.hostname}/api/review/` + reviewId, {
       method: "DELETE",
       headers: {
         Accept: "application/json",
@@ -100,7 +100,7 @@ export default function ReviewForm({ movieId, reviews, setReviews }) {
   }
 
   function submitReview() {
-    fetch("http://localhost:9090/api/review/", {
+    fetch(`http://${window.location.hostname}/api/review/`, {
       method: "POST",
       headers: {
         Accept: "application/json",

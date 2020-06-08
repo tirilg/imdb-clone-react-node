@@ -21,10 +21,9 @@ import "./App.css";
 
 export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  //const [isLoading, setIsLoading] = useState(true);
 
   async function handleAuthentication() {
-    await fetch("http://localhost:9090/api/users/isloggedin", {
+    await fetch(`http://${window.location.hostname}/api/users/isloggedin`, {
       credentials: "include",
       headers: {
         Accept: "application/json",
