@@ -1,7 +1,5 @@
 const express = require("express");
-
 const router = express.Router();
-const User = require("../../models/User.js");
 const WatchLink = require("../../models/WatchLink.js");
 
 router.get("/hasWatchLink/:movieId", async (req, res) => {
@@ -16,7 +14,6 @@ router.get("/hasWatchLink/:movieId", async (req, res) => {
         })
         .limit(1);
       if (watchLink[0]) {
-        //res.json(watchLink);
         return res
           .status(200)
           .send({ response: "In list", id: watchLink[0].id });
@@ -35,7 +32,6 @@ router.get("/hasWatchLink/:movieId", async (req, res) => {
 
 //get all movies in watch list of session user
 router.get("/", async (req, res) => {
-  //check if user is logged in (not done)
   try {
     const userWatchList = await WatchLink.query().where(
       "user_id",
@@ -51,7 +47,6 @@ router.get("/", async (req, res) => {
 
 //post new watchlink movie and user
 router.post("/", async (req, res) => {
-  //const movieId = req.params.movieId;
   const { movie_id } = req.body;
 
   //check if user is logged in (not done)

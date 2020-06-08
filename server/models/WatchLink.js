@@ -3,7 +3,7 @@ const User = require("./User.js");
 
 class WatchLink extends Model {
   static get tableName() {
-    return "watchlink";
+    return "watchLink";
   }
 
   static get relationMappings() {
@@ -12,7 +12,7 @@ class WatchLink extends Model {
         relation: Model.BelongsToOneRelation,
         modelClass: User,
         join: {
-          from: "watchlink.user_id",
+          from: "watchLink.user_id",
           to: "users.id",
         },
       },
