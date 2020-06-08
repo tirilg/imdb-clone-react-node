@@ -55,7 +55,7 @@ exports.down = function (knex) {
     knex.schema
       // Here, delete tables in reverse order because todos depends on users
       .dropTableIfExists("movieLike")
-      .dropTableIfExists("watchlink")
+      .dropTableIfExists("watchLink")
       .dropTableIfExists("review")
       .dropTableIfExists("users")
   );
