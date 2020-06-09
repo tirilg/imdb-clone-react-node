@@ -2,7 +2,7 @@ const { Model } = require("objection");
 const User = require("./User.js");
 class MovieLike extends Model {
   static get tableName() {
-    return "movielike";
+    return "movieLike";
   }
 
   static get relationMappings() {
@@ -11,7 +11,7 @@ class MovieLike extends Model {
         relation: Model.BelongsToOneRelation,
         modelClass: User,
         join: {
-          from: "movielike.user_id",
+          from: "movieLike.user_id",
           to: "users.id",
         },
       },

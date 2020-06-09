@@ -82,7 +82,7 @@ router.post("/", async (req, res) => {
           content,
           user_id: req.session.user.id,
           movie_id,
-        });
+        }).withGraphFetched("user");
 
         return res.send({ response: "Review posted", review: newReview });
       } else {
